@@ -1,0 +1,17 @@
+{
+  "name": "@otter/graphql",
+  "version": "0.0.0",
+  "scripts": {
+    "esbuild": "esbuild --platform=node --target=node24.11 --bundle index.js --outdir=dist --loader:.graphql=text --sourcemap",
+    "build": "npm run esbuild -- --minify",
+    "develop": "concurrently 'npm run esbuild -- --watch' 'node --watch dist/index.js'"
+  },
+  "devDependencies": {
+    "@graphql-tools/schema": "10.0.26",
+    "concurrently": "9.2.1",
+    "esbuild": "0.25.11",
+    "express": "5.1.0",
+    "graphql": "16.12.0",
+    "graphql-http": "1.22.4"
+  }
+}

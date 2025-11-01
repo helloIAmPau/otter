@@ -1,0 +1,13 @@
+{
+  "name": "@otter/repo",
+  "version": "0.0.0",
+  "workspaces": [
+    "./modules/@otter/*"
+  ],
+  "scripts": {
+    "develop": "source ./.env.develop && docker compose -f docker-compose.yml -f docker-compose.develop.yml up --build",
+    "mobile": "npm run --workspace=@otter/mobile develop",
+    "migrate:clickhouse": "docker compose exec -T clickhouse clickhouse-client < migrations.clickhouse.sql",
+    "shell:clickhouse": "docker exec -t -i otter-clickhouse-1 clickhouse-client"
+  }
+}

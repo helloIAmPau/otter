@@ -1,0 +1,7 @@
+{
+  "name": "@otter/clickhouse",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@clickhouse/client": "1.12.1"
+  }
+}

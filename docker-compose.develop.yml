@@ -1,0 +1,7 @@
+services:
+  app:
+    volumes:
+      - './modules:/sources/modules'
+  graphql:
+    volumes:
+      - './modules:/sources/modules'

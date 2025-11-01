@@ -1,0 +1,26 @@
+{
+  "name": "@otter/mobile",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "develop": "expo run:android --device",
+    "prebuild": "expo prebuild --clean",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "@react-navigation/native": "7.1.19",
+    "@react-navigation/native-stack": "7.6.1",
+    "expo": "54.0.20",
+    "expo-background-task": "1.0.8",
+    "expo-health-connect": "0.1.1",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-health-connect": "3.4.0",
+    "react-native-safe-area-context": "5.6.0",
+    "react-native-screens": "4.16.0"
+  },
+  "devDependencies": {
+    "expo-build-properties": "1.0.9"
+  }
+}

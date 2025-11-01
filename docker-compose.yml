@@ -1,0 +1,51 @@
+services:
+  ingress:
+    image: 'caddy:2.10.2-alpine'
+    ports:
+      - '80:80'
+    volumes:
+      - './data/caddy:/data'
+    configs:
+      - source: 'caddyfile'
+        target: '/etc/caddy/Caddyfile'
+    networks:
+      - 'frontend'
+  app:
+    image: 'otter/app:0.0.0'
+    build:
+      args:
+        service: 'app'
+    networks:
+      - 'frontend'
+  graphql:
+    image: 'otter/graphql:0.0.0'
+    build:
+      args:
+        service: 'graphql'
+    environment:
+      - 'CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD}'
+    networks:
+      - 'backend'
+      - 'frontend'
+  clickhouse:
+    image: 'clickhouse/clickhouse-server:25.3-alpine'
+    environment:
+      - 'CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD}'
+    networks:
+      - 'backend'
+    volumes:
+      - './data/clickhouse/data:/var/lib/clickhouse/'
+      - './data/clickhouse/logs:/var/log/clickhouse-server/'
+
+networks:
+  frontend:
+  backend:
+
+configs:
+  caddyfile:
+    content: |
+      http://localhost {
+        reverse_proxy /graphql http://graphql
+
+        reverse_proxy http://app
+      }
