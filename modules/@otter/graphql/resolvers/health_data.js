@@ -25,8 +25,9 @@ export const appendData = function(_, { data }, { user }) {
     'value',
     'owner'
   ], data.map(function(row) {
-    row.owner = user.uid;
-
-    return row;
+    return {
+      ...row,
+      owner: user.uid
+    };
   }));
 }
