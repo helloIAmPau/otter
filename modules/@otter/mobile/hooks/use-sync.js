@@ -9,7 +9,7 @@ defineTask(TASK_NAME, function() {
   return BackgroundTaskResult.Success;
 });
 
-export default function() {
+export default function useSync() {
   const [ state, setState ] = useState('LOADING');
 
   useLayoutEffect(function() {

@@ -5,10 +5,10 @@ export default new GraphQLScalarType({
   description: 'Custom DateTime scalar. We convert a plain JS DateTime and a Clickhouse DateTime string to a ISOString date type',
   serialize: function(value) {
     if(typeof(value) === 'string') {
-      return value.replace(/\s/, 'T');
+      return value;
     }
 
-    return value.toISOString().split('.')[0];
+    return value.toISOString();
   },
   parseValue: function(value) {
     return new Date(value);

@@ -44,7 +44,7 @@ networks:
 configs:
   caddyfile:
     content: |
-      http://localhost {
+      ${API_URL} {
         reverse_proxy /graphql http://graphql
 
         reverse_proxy http://app

@@ -1,5 +1,7 @@
+import { useLayoutEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import useSync from '../hooks/use-sync';
+
+import health from '../services/health';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +13,9 @@ const styles = StyleSheet.create({
 });
 
 export default function Home() {
-  const { state, unregister } = useSync();
+  useLayoutEffect(function() {
+    health();
+  }, []);
 
   return (
     <View style={styles.container}>

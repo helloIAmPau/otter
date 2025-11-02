@@ -1,4 +1,7 @@
 services:
+  ingress:
+    ports:
+      - '8888:8888'
   app:
     volumes:
       - './modules:/sources/modules'

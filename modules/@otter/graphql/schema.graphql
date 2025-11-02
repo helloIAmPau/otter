@@ -1,5 +1,18 @@
 scalar DateTime
+scalar JSON
 
 type Query {
   lastTimestamp(series: String!): DateTime!
+}
+
+input HealthRecordInput {
+  name: String!
+  startDateTime: DateTime!
+  endDateTime: DateTime!
+  metadata: JSON!
+  value: JSON!
+}
+
+type Mutation {
+  appendData(data: [HealthRecordInput]!): Boolean!
 }
