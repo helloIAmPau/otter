@@ -7,6 +7,7 @@ export default function Page() {
         <style>
           { styles }
         </style>
+        <link rel="stylesheet" href="/assets/app.css" />
       </head>
       <body>
         <div id='root'></div>

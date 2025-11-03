@@ -5,19 +5,19 @@
     "esbuild:server": "esbuild --platform=node --target=node24.11 --bundle index.js --outdir=dist --sourcemap --loader:.css=text --loader:.js=jsx --jsx=automatic",
     "build:server": "npm run esbuild:server -- --minify",
     "develop:server": "concurrently 'npm run esbuild:server -- --watch' 'node --watch dist/index.js'",
-
-    "esbuild:app": "esbuild --bundle app.js --outdir=dist/assets --sourcemap --loader:.js=jsx --jsx=automatic",
+    "esbuild:app": "esbuild --bundle app.js --outdir=dist/assets --sourcemap --loader:.js=jsx --jsx=automatic --loader:.woff=file --loader:.woff2=file",
     "build:app": "npm run esbuild:app -- --minify",
     "develop:app": "concurrently 'npm run esbuild:app -- --watch'",
-
     "build": "concurrently 'npm run build:app' 'npm run build:server'",
     "develop": "concurrently 'npm run develop:app' 'npm run develop:server'"
   },
   "devDependencies": {
+    "@fontsource/poppins": "5.2.7",
     "concurrently": "9.2.1",
     "esbuild": "0.25.11",
     "express": "5.1.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-router": "7.9.5"
   }
 }

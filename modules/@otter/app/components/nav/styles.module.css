@@ -1,0 +1,11 @@
+.wrapper {
+  height: calc(3 * var(--base-unit));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: var(--bold);
+  font-size: var(--h1);
+}
