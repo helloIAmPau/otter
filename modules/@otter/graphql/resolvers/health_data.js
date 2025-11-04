@@ -3,7 +3,7 @@ import { query, insert } from '@otter/clickhouse';
 export const lastTimestamp = function(_, { series }, { user }) {
   return query(`
 select
-  max(startDateTime) as lastTimestamp
+  addMilliseconds(max(startDateTime), 1) as lastTimestamp
 from
   health.series
 where
