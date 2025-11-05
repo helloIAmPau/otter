@@ -1,8 +1,21 @@
 scalar DateTime
 scalar JSON
 
+type DaySeries {
+  day: DateTime!
+  series: [String]!
+}
+
+type DataPoint {
+  source: String!
+  value: Float!
+  timestamp: DateTime!
+}
+
 type Query {
   lastTimestamp(series: String!): DateTime!
+  heartRate(startDateTime: DateTime!, endDateTime: DateTime!): [DataPoint]!
+  seriesByDay(startDateTime: DateTime!, endDateTime: DateTime!): [DaySeries]!
 }
 
 input HealthRecordInput {

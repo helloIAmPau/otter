@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
 
 export default function Home() {
   useLayoutEffect(function() {
-    health();
+    health().catch(function(error) {
+      console.log(error);
+    });
   }, []);
 
   return (

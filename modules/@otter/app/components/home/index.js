@@ -1,5 +1,7 @@
+import SeriesCalendar from '../series-calendar';
+
 export default function Home() {
   return (
-    <h1>hello</h1>
+    <SeriesCalendar />
   );
 }
