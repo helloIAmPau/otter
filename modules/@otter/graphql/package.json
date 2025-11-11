@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@graphql-tools/schema": "10.0.26",
+    "react": "19.1.0",
     "concurrently": "9.2.1",
     "esbuild": "0.25.11",
     "express": "5.1.0",

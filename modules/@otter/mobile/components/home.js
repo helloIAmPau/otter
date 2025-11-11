@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import health from '../services/health';
+import { useHealth } from '../hooks/use-health';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,11 +13,15 @@ const styles = StyleSheet.create({
 });
 
 export default function Home() {
+  const { sync, isLoading } = useHealth();
+
   useLayoutEffect(function() {
-    health().catch(function(error) {
+    sync().then(function() {
+      console.log('Done!');
+    }).catch(function(error) {
       console.log(error);
     });
-  }, []);
+  }, [ sync ]);
 
   return (
     <View style={styles.container}>
