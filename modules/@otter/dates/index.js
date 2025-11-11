@@ -45,3 +45,7 @@ export const add = function(currentDate, amount, field) {
     (/^milliseconds?$/).test(field) === true ? currentDate.getMilliseconds() + amount : currentDate.getMilliseconds()
   );
 };
+
+export const calendar = function(date) {
+  return 'Today';
+};

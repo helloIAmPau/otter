@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router';
 
-import Clickable from '../clickable';
+import Button from '../button';
 import Container from '../container';
 
 import { wrapper, logo } from './styles.module.css';
@@ -15,7 +15,7 @@ export default function Nav() {
 
   return (
     <Container className={ wrapper } onClick={ onClick }>
-      <Clickable className={ logo }>Otter</Clickable>
+      <Button className={ logo }>Otter</Button>
     </Container>
   );
 };

@@ -1,6 +1,8 @@
 :root {
   --base-unit: 1rem;
   --bold: 500;
+  --border-radius: 8px;
+  --border: 1px solid black;
 
   --h1: calc(1.25 * var(--base-unit));
 
@@ -12,4 +14,6 @@ body, h1, div {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-size: var(--base-unit);
 }

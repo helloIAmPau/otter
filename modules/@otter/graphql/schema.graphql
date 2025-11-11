@@ -16,6 +16,7 @@ type Query {
   lastTimestamp(series: String!): DateTime!
   heartRate(startDateTime: DateTime!, endDateTime: DateTime!): [DataPoint]!
   seriesByDay(startDateTime: DateTime!, endDateTime: DateTime!): [DaySeries]!
+  currentWeight: DataPoint
 }
 
 input HealthRecordInput {

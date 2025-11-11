@@ -1,0 +1,11 @@
+.row {
+  display: flex;
+  gap: calc(0.25 * var(--base-unit));
+  align-items: flex-end;
+  user-select: none;
+}
+
+.value {
+  font-size: calc(1.75 * var(--base-unit));
+  line-height: calc(1.75 * var(--base-unit));
+}

@@ -1,0 +1,17 @@
+.wrapper {
+  padding-left: calc(2 * var(--base-unit));
+  padding-right: calc(2 * var(--base-unit));
+  padding-bottom: var(--base-unit);
+  padding-top: var(--base-unit);
+
+  border: var(--border);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  align-items: center;
+  gap: calc(0.5 * var(--base-unit));
+}
+
+.bottom {
+  font-size: calc(0.75 * var(--base-unit));
+}
